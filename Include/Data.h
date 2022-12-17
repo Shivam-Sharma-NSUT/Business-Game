@@ -1,0 +1,45 @@
+char PropName[28][20]={"START","SHIP","MAXICO","CHINA","TANK","CHANCE","EGYPT","AUCTION","BRAZIL","RUSSIA","AIRPLANE","PAKISTAN","ITALY","JAPAN","CASINO","U.S.A.","MALAYSIA","CHANCE","METRO","U.K.","FRANCE","JAIL","KOREA","BMW","ICELAND","CHEST","INDIA","SPAIN"};
+int PropRate[28]={0,550,500,400,500,0,600,0,400,350,1100,300,300,500,0,700,250,0,900,600,500,0,500,600,550,0,800,500};
+int PropColor[28]={5,15,12,9,15,8,14,5,10,9,15,12,14,10,5,9,10,8,15,12,14,8,10,15,9,8,12,14};
+int list1[15],list2[15],p1top=0,p2top=0;
+struct Flags{
+    int x,y;
+};
+FILE *file,*file1,*file2,*sfile;
+struct Record{
+    char win[PLAYER_NAME],win_amt[5],los[PLAYER_NAME],los_amt[5];
+}tmp;
+struct Data{
+    int p1list[15],p2list[15];
+    char p1name[PLAYER_NAME],p2name[PLAYER_NAME],p1propstatus[15],p2propstatus[15],p1propmultiplier[15],p2propmultiplier[15];
+    int d1,d2,t1,t2,p1pos,p2pos,p1cash,p2cash;
+}data;
+POINT pnt;
+void init_Grid();
+void userInput(char[],int*,int*,int*,int,bool);
+void versusWindow();
+void drawGame();
+void ActualDice();
+void DrawHold();
+void askToProp(int);
+void casino();
+void modbal(int,int);
+int PlayerSwitch(int,char);
+void atpclean();
+void Shift(int*,int,int);
+void ReturnButton();
+void Remove_RB();
+bool ColorComplete(int pno,int color);
+bool BankEmpty();
+void Decide_Winner();
+void PrimarySCR();
+void MainMenu();
+void Diomond(int,int,int);
+void DrawMM();
+void InputMM();
+void doMM(int);
+void MakeRecords(int Total1,int Total2);
+void DisplayRecords();
+void Help();
+void drawInput();
+void Resume();
